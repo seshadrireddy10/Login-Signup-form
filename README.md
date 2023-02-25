@@ -1,9 +1,17 @@
-# Login form & Sign Up form full Code
+## A tomcat docker image
 
-[This](https://mehedi61.github.io/Login-Signup-form/login.html) is a [Login](https://mehedi61.github.io/Login-Signup-form/login.html) form and a [Sign up](https://mehedi61.github.io/Login-Signup-form/signup.html) form.  
-Built with **HTML5** and **CSS3**. 
+Based on [openjdk:8-jdk-alpine](https://hub.docker.com/r/library/openjdk/):
 
-### Tasks
+* Alpine Linux
+* OpenJDK 8
+* Tomcat 8.5
 
-* Require the username and password on the **login** page.
-* Require full name, email address, username and a password on the **sign up** page.
+#### How to build?
+
+`docker build -t {YOUR_TAG} .`
+
+#### How to quickstart?
+
+`docker run -it -p 80:8080 {YOUR_TAG}`
+
+Check http://localhost to see the tomcat page.
