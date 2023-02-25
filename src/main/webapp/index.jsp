@@ -1,56 +1,65 @@
-<!DOCTYPE HTML>
-<html lang="en" >
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <title>Login</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="login_style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Register page</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
-<body class="body">
-	
-	<a href="https://github.com/Mehedi61/Login-form-Sign-up-form"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/c6625ac1f3ee0a12250227cf83ce904423abf351/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677261795f3664366436642e706e67" alt="GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png"></a>
-
-<div class="login-page">
-  <div class="form">
-
-    <form>
-      <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
-      <input type="text" placeholder="&#xf007;  username"/>
-      <input type="password" id="password" placeholder="&#xf023;  password"/>
-      <i class="fas fa-eye" onclick="show()"></i> 
-      <br>
-      <br>
-      <button>LOGIN</button>
-      <p class="message"></p>
-    </form>
-
-    <form class="login-form">
-      <button type="button" onclick="window.location.href='signup.html'">SIGN UP</button>
-    </form>
-  </div>
-</div>
-
-  <script>
-    function show(){
-      var password = document.getElementById("password");
-      var icon = document.querySelector(".fas")
-
-      // ========== Checking type of password ===========
-      if(password.type === "password"){
-        password.type = "text";
-      }
-      else {
-        password.type = "password";
-      }
-    };
-  </script>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="./img/login.jpg" alt="img" class="img">
+        </div>
+        <div class="row">
+            <form action="#" class="form active" id="login">
+                <h2>Login</h2>
+                <label for="email">Email Address</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
+                </div>
+                <label for="password">Password</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="password" id="password" placeholder="**********">
+                    <a href="#" class="reset-password">Reset Password</a>
+                </div>
+                <div class="pass-reset remember-box">
+                    <input type="checkbox" name="remember" class="remember" id="remember"><span class="remember-text">Rememeber Password</span>
+                </div>
+                <button class="btn btn-login">Login</button>
+                <p>Don't have an account? <a onclick="changeToRegister()" id="changeToRegister">Sign up</a></p>
+                <p class="or">or</p>
+                <button class="btn btn-gogle-auth"><i class="google ri-google-fill"></i>Authorize with Google</button>
+            </form>
+            <form action="#" class="form" id="register">
+                <h2>Register</h2>
+                <label for="email">Email Address</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="email" name="email" class="email" id="emailInput" placeholder="name@mail.com">
+                </div>
+                <label for="password">Password</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="password" id="password" placeholder="**********">
+                </div>
+                <label for="re-password">Re-Password</label>
+                <div class="pass-reset" onclick="activeInput(this)">
+                    <input type="password" class="password" name="re-password" id="re-password" placeholder="**********">
+                </div>
+                <button class="btn btn-login">Register</button>
+                <p>Do you have an account? <a onclick="changeToLogin()" id="chnageToLogin">Sign in</a></p>
+                <p class="or">or</p>
+                <button class="btn btn-gogle-auth"><i class="google ri-google-fill"></i>Authorize with Google</button>
+            </form>
+        </div>
+    </div>
+    <!-- JS -->
+    <script src="./script.js"></script>
 </body>
-</html>
 
+</html>
