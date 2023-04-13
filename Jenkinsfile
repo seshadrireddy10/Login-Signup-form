@@ -26,13 +26,13 @@ pipeline {
           stage('dockert run') {
             steps {
 			
-                sh "docker run -dit --name my-running-appdocker -p 80:8080  tomcattest "
+                sh "docker run -dit --name my-running-appdocker -p 80:8080  tomcattes "
                 
             }
         }
         stage('test url ') {
             steps {
-                sh 'curl -v http://192.168.33.1/'
+                sh 'curl -v http://192.168.29.248/annaApps/'
                 
             }
         }
